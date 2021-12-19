@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="github.svg" type="image/x-icon">
     <title>ezequielganr</title>
+    <link rel="shortcut icon" href="github.svg" type="image/x-icon">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/aos.css">
     <link rel="stylesheet" href="css/index.css">
@@ -13,63 +13,69 @@
 <body>
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <h4 class="unicaone display-4">ezequielganr</h4>
+            <h5 class="unicaone display-5">ezequielganr</h5>
         </div>
     </nav>
     <div class="container">
         <div class="row">
             <div class="col-12 col-lg-6">
-                <img src="202118121331.png" class="img-fluid" width="400">
+                <div class="text-center">
+                    <img src="202112182105.png" class="img-fluid" width="350">
+                </div>
             </div>
             <div class="col-12 col-lg-6">
-                <br>
-                <p class="text-muted">
-                    <em>ezequielganr</em>
-                </p>
-                <h1 class="unicaone display-1" data-aos="fade-up">Ezequiel Garibotti</h1>
+                <p class="text-muted">ezequielganr</p>
+                <h1 class="unicaone display-1">Ezequiel Garibotti</h1>
                 <hr>
-                <h4>Programador Web Full stack</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae quas cumque unde labore! Iusto nesciunt nulla quam quaerat eligendi officiis ab expedita voluptas!</p>
+                <h3>Programador Web Full stack</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, aliquid nulla!</p>
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container mt-5">
         <div class="row">
-            <div class="col-12 col-lg-2">
+            <div class="col-2">
                 <h2>Perfil</h2>
                 <hr>
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container mt-5">
         <div class="row">
-            <div class="col-12 col-lg-2">
+            <div class="col-2">
                 <h2>Proyectos</h2>
                 <hr>
             </div>
         </div>
-    </div>
-    <div class="container">
         <div class="row">
-            <div class="col-12 col-lg-2">
-                <h2>Contacto</h2>
-                <hr>
+            <div id="app">
+                <ul>
+                    <li v-for="i in repos">{{ i.name }}</li>
+                </ul>
             </div>
         </div>
     </div>
-    <div class="container-fluid bg-secondary mt-5">
-        <div class="row">
-            <div class="col-12">
-                <div class="text-center">
-                    <h4 class="unicaone p-5">ezequielganr &copy;</h4>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/vue.min.js"></script>
     <script src="js/aos.js"></script>
+    <script src="js/axios.min.js"></script>
     <script>
         AOS.init();
+
+        new Vue({
+            el: '#app',
+            data: {
+                repos: null
+            },
+            created: function () {
+                this.github();
+            },
+            methods: {
+                github: async function () {
+                    let res = await axios.get('https://api.github.com/users/ezequielganr/repos');
+                    this.repos = res.data;
+                }
+            }
+        });
     </script>
 </body>
 </html>

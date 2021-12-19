@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
 
-body {
-    background-color: #2e2828;
-    color: white;
+:root {
+    --var-primary: #393e46;
+    --var-secondary: #222831;
 }
 
 .unicaone {
     font-family: 'Unica One', cursive;
 }
 
-.bg-secondary {
-    background-color: #503a3a !important;
+body {
+    background-color: var(--var-primary);
+    color: white !important;
 }
