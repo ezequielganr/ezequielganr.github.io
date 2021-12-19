@@ -11,47 +11,160 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-            <h5 class="unicaone display-5">ezequielganr</h5>
-        </div>
-    </nav>
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-lg-6">
-                <div class="text-center">
-                    <img src="202112182105.png" class="img-fluid" width="350">
+    <div id="app">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <h5 class="unicaone display-5">ezequielganr</h5>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <div class="text-center">
+                        <img src="202112182105.png" class="img-fluid" width="350" data-aos="fade-right">
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <p>ezequielganr</p>
+                    <h1 class="unicaone display-1" data-aos="fade-up">Ezequiel Garibotti</h1>
+                    <hr>
+                    <h3>Programador Web Full stack</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, aliquid nulla!</p>
                 </div>
             </div>
-            <div class="col-12 col-lg-6">
-                <p class="text-muted">ezequielganr</p>
-                <h1 class="unicaone display-1">Ezequiel Garibotti</h1>
-                <hr>
-                <h3>Programador Web Full stack</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, aliquid nulla!</p>
+        </div>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-2">
+                    <h2>Perfil</h2>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-lg-4">
+                    <h3>Lorem, ipsum dolor.</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia, nihil perferendis?</p>
+                </div>
+                <div class="col-12 col-lg-8">
+                    <table class="table table-borderless table-active td">
+                        <tr class="text-center" data-aos="fade-right">
+                            <td>Html</td>
+                            <td>Css</td>
+                            <td>Bootstrap</td>
+                            <td>Js</td>
+                            <td>Jquery</td>
+                        </tr>
+                        <tr class="text-center" data-aos="fade-right">
+                            <td>Nodejs</td>
+                            <td>Npm</td>
+                            <td>Express</td>
+                            <td>React</td>
+                            <td>Vue</td>
+                        </tr>
+                        <tr class="text-center" data-aos="fade-right">
+                            <td>Php</td>
+                            <td>Composer</td>
+                            <td>Laravel</td>
+                            <td>Python</td>
+                            <td>Django</td>
+                        </tr>
+                        <tr class="text-center" data-aos="fade-right">
+                            <td>MySQL</td>
+                            <td>MariaDB</td>
+                            <td>MongoDB</td>
+                            <td>Json</td>
+                            <td>Git</td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-2">
-                <h2>Perfil</h2>
-                <hr>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-2">
+                    <h2>Proyectos</h2>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-lg-4">
+                    <h3>Lorem, ipsum dolor.</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora eveniet corporis nihil.</p>
+                </div>
+                <div class="col-12 col-lg-8">
+                    <table class="table table-borderless table-hover">
+                        <tr v-for="i in repos" data-aos="fade-up">
+                            <td>{{ i.name }}</td>
+                            <td>{{ i.language }}</td>
+                            <td class="text-center">
+                                <a v-bind:href="i.html_url" target="_blank" class="btn btn-outline-light">GitHub</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-2">
-                <h2>Proyectos</h2>
-                <hr>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-2">
+                    <h2>Contacto</h2>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-lg-4">
+                    <h3>Lorem, ipsum dolor.</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus totam ut vero!</p>
+                </div>
+                <div class="col-12 col-lg-8">
+                    <table class="table table-borderless table-hover">
+                        <tr data-aos="fade-up">
+                            <td class="table-active">Nombre y Apellido</td>
+                            <td>Ezequiel Garibotti</td>
+                        </tr>
+                        <tr data-aos="fade-up">
+                            <td class="table-active">Edad</td>
+                            <td>22</td>
+                        </tr>
+                        <tr data-aos="fade-up">
+                            <td class="table-active">País</td>
+                            <td>Argentina</td>
+                        </tr>
+                        <tr data-aos="fade-up">
+                            <td class="table-active">Dirección</td>
+                            <td>Buenos Aires, Don Torcuato (Tigre)</td>
+                        </tr>
+                        <tr data-aos="fade-up">
+                            <td class="table-active">Tel</td>
+                            <td>+541122546654</td>
+                        </tr>
+                        <tr data-aos="fade-up">
+                            <td class="table-active">Correo</td>
+                            <td>ezlgaribotti@gmail.com</td>
+                        </tr>
+                        <tr data-aos="fade-up">
+                            <td class="table-active">GitHub</td>
+                            <td>
+                                <a href="https://github.com/ezequielganr" target="_blank" class="text-white">https://github.com/ezequielganr</a>
+                            </td>
+                        </tr>
+                        <tr data-aos="fade-up">
+                            <td class="table-active">WhatsApp</td>
+                            <td>
+                                <a href="https://wa.me/+541122546654" target="_blank" class="text-white">https://wa.me/+541122546654</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div id="app">
-                <ul>
-                    <li v-for="i in repos">{{ i.name }}</li>
-                </ul>
+        <div class="container-fluid mt-5">
+            <div class="row">
+                <div class="col-12">
+                    <div class="text-center">
+                        <h4 class="unicaone p-4">ezequielganr &copy;</h4>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -60,11 +173,10 @@
     <script src="js/axios.min.js"></script>
     <script>
         AOS.init();
-
         new Vue({
             el: '#app',
             data: {
-                repos: null
+                repos: []
             },
             created: function () {
                 this.github();
